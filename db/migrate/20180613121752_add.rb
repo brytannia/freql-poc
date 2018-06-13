@@ -9,7 +9,7 @@ class Add < ActiveRecord::Migration[5.2]
       t.string :name
     end
 
-    create_table :project do |t|
+    create_table :projects do |t|
       t.string :name
       t.string :repo_url
       t.references :main_lang

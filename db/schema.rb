@@ -51,15 +51,6 @@ ActiveRecord::Schema.define(version: 2018_06_13_121752) do
     t.string "name"
   end
 
-  create_table "project", force: :cascade do |t|
-    t.string "name"
-    t.string "repo_url"
-    t.bigint "main_lang_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["main_lang_id"], name: "index_project_on_main_lang_id"
-  end
-
   create_table "project_langs", force: :cascade do |t|
     t.bigint "project_id"
     t.bigint "lang_id"
@@ -67,6 +58,15 @@ ActiveRecord::Schema.define(version: 2018_06_13_121752) do
     t.datetime "updated_at", null: false
     t.index ["lang_id"], name: "index_project_langs_on_lang_id"
     t.index ["project_id"], name: "index_project_langs_on_project_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "name"
+    t.string "repo_url"
+    t.bigint "main_lang_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["main_lang_id"], name: "index_projects_on_main_lang_id"
   end
 
   create_table "users", force: :cascade do |t|

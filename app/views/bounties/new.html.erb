@@ -1,0 +1,22 @@
+<div>
+  <%= form_for @bounty do |f| %>
+    <%= f.fields_for :master do |fm| %>
+      <div>
+        <%= fm.label :username %><br/>
+        <%= fm.text_field :username %>
+      </div>
+    <% end %>
+
+    <div>
+      <%= f.label :issue_url %><br/>
+      <%= f.text_field :issue_url %>
+    </div>
+
+    <div>
+      <%= f.label :sum %><br/>
+      <%= f.text_field :sum %>
+    </div>
+
+    <%= f.submit 'Submit bounty' %>
+  <% end %>
+</div>
